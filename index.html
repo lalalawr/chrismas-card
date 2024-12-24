@@ -12,38 +12,41 @@
         <p>请输入您的密码以查看贺卡：</p>
         <input type="text" id="password" placeholder="输入姓名解锁专属贺卡">
         <button onclick="unlockCard()">解锁贺卡</button>
-        
-        <div id="card" class="card hidden">
+
+        <!-- 预先定义一个显示图片的区域 -->
+        <div id="imageContainer" class="hidden">
             <h2>您的圣诞贺卡</h2>
+            <!-- 图片将在这里显示 -->
             <img id="cardImage" src="" alt="圣诞贺卡图片" style="max-width: 100%; height: auto;">
         </div>
     </div>
+    
     <script>
         // 密码与图片的映射关系
         const passwords = {
-          "王宝英": "wangbaoying.jpg",
-   "王冉": "wangran.jpg",
-   "吴玥": "wuyue.jpg",
-   "李若然": "liruojuan.jpg",
-   "肖桐": "xiaotong.jpg",
-   "王雨欣": "wangyuxin.jpg",
-   "江秋荣": "jiangqiurong.jpg",
-   "余懿凡": "yuyifan.jpg",
-   "王新惠": "wangxinhui.jpg",
-   "刘怿宇": "liuyiuyu.jpg",
-   "郑建月": "zhengjianyue.jpg"
+            "王宝英": "wangbaoying.jpg",
+            "王冉": "wangran.jpg",
+            "吴玥": "wuyue.jpg",
+            "李若然": "liruojuan.jpg",
+            "肖桐": "xiaotong.jpg",
+            "王雨欣": "wangyuxin.jpg",
+            "江秋荣": "jiangqiurong.jpg",
+            "余懿凡": "yuyifan.jpg",
+            "王新惠": "wangxinhui.jpg",
+            "刘怿宇": "liuyiuyu.jpg",
+            "郑建月": "zhengjianyue.jpg"
         };
 
         // 解锁贺卡函数
         function unlockCard() {
             const passwordInput = document.getElementById('password').value.trim();  // 获取输入的密码
-            const card = document.getElementById('card');
-            const cardImage = document.getElementById('cardImage');
+            const imageContainer = document.getElementById('imageContainer');   // 获取图片展示区域
+            const cardImage = document.getElementById('cardImage'); // 获取图片元素
 
             // 验证密码
             if (passwords[passwordInput]) {
-                // 显示贺卡
-                card.classList.remove('hidden');
+                // 密码正确，显示图片展示区域
+                imageContainer.classList.remove('hidden');
                 // 设置图片路径
                 const imagePath = `images/${passwords[passwordInput]}`;
                 cardImage.src = imagePath;
