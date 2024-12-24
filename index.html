@@ -13,6 +13,11 @@
         <input type="text" id="password" placeholder="输入姓名解锁专属贺卡">
         <button onclick="unlockCard()">解锁贺卡</button>
 
+        <!-- 加载提示 -->
+        <div id="loadingMessage" class="hidden">
+            <p>请稍等几秒加载图片哦~~</p>
+        </div>
+
         <!-- 预先定义一个显示图片的区域 -->
         <div id="imageContainer" class="hidden">
             <h2>您的圣诞贺卡</h2>
@@ -45,17 +50,22 @@
             const imageContainer = document.getElementById('imageContainer');   // 获取图片展示区域
             const cardImage = document.getElementById('cardImage'); // 获取图片元素
             const downloadButton = document.getElementById('downloadButton'); // 获取下载按钮
+            const loadingMessage = document.getElementById('loadingMessage'); // 获取加载提示区域
 
             // 验证密码
             if (passwords[passwordInput]) {
                 // 密码正确，显示图片展示区域
                 imageContainer.classList.remove('hidden');
+                loadingMessage.classList.remove('hidden'); // 显示加载提示
 
                 // 设置原图路径
                 const originalImagePath = `images/${passwords[passwordInput]}`;
 
                 // 使用压缩后的图片进行预览
                 compressImage(originalImagePath, function(compressedImageDataUrl) {
+                    // 隐藏加载提示
+                    loadingMessage.classList.add('hidden');
+                    // 显示压缩后的图片
                     cardImage.src = compressedImageDataUrl;
                 });
 
