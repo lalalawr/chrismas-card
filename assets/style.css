@@ -1,36 +1,23 @@
-/* 通用样式 */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
     background-color: #f2f2f2;
-    margin: 0;
-    background-image: url('assets/images/christmas-background.jpg');  /* 设置圣诞背景图 */
-    background-size: cover;  /* 让背景图覆盖整个页面 */
-    background-position: center;  /* 使背景图居中显示 */
-    background-attachment: fixed;  /* 固定背景图，随着页面滚动不移动 */
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
-    position: relative;  /* 使容器能够在背景上方显示 */
-    z-index: 2;  /* 保证容器在背景图之上 */
 }
 
-/* 输入框样式 */
 input {
     padding: 10px;
     margin: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 80%;
-    max-width: 400px;
-    box-sizing: border-box;
 }
 
-/* 按钮样式 */
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -38,82 +25,23 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-/* 加载提示样式 */
-#loadingMessage {
-    font-size: 18px;
-    color: #ff6347;
-    margin: 20px;
-    display: none;
-    font-weight: bold;
-}
-
-/* 图片展示区域 */
-#imageContainer {
-    display: none;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* 卡片内容 */
 .card {
+    display: none;
     margin-top: 20px;
-    opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    display: block;
 }
 
-/* 图片样式 */
 .card img {
     max-width: 100%;
-    height: auto;
     border-radius: 8px;
-    margin: 10px 0;
 }
 
-/* 下载按钮样式 */
-#downloadButton {
-    padding: 10px 20px;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    display: none;
-    transition: background-color 0.3s ease;
-}
-
-#downloadButton:hover {
-    background-color: #007B9E;
-}
-
-/* 隐藏元素 */
 .hidden {
     display: none;
-}
-
-/* 按钮居中 */
-button, #downloadButton {
-    margin-top: 20px;
-    display: inline-block;
-}
-
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    input {
-        width: 100%;
-    }
 }
