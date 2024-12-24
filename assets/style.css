@@ -5,7 +5,7 @@ body {
     padding: 20px;
     background-color: #f2f2f2;
     margin: 0;
-    background-image: url('images/christmas-background.jpg');  /* 设置圣诞背景图 */
+    background-image: url('assets/christmas-background.jpg');  /* 设置圣诞背景图 */
     background-size: cover;  /* 让背景图覆盖整个页面 */
     background-position: center;  /* 使背景图居中显示 */
     background-attachment: fixed;  /* 固定背景图，随着页面滚动不移动 */
