@@ -5,17 +5,11 @@ body {
     padding: 20px;
     background-color: #f2f2f2;
     margin: 0;
-    background-image: url('assets/christmas-background.jpg');  /* 设置圣诞背景图 */
-    background-size: cover;  /* 让背景图覆盖整个页面 */
-    background-position: center;  /* 使背景图居中显示 */
-    background-attachment: fixed;  /* 固定背景图，随着页面滚动不移动 */
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
-    position: relative;  /* 使容器能够在背景上方显示 */
-    z-index: 2;  /* 保证容器在背景图之上 */
 }
 
 /* 输入框样式 */
@@ -25,8 +19,8 @@ input {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 80%;
-    max-width: 400px;
+    width: 80%; /* 输入框宽度调整 */
+    max-width: 400px; /* 设置最大宽度 */
     box-sizing: border-box;
 }
 
@@ -49,9 +43,9 @@ button:hover {
 /* 加载提示样式 */
 #loadingMessage {
     font-size: 18px;
-    color: #ff6347;
+    color: #ff6347; /* 红色提示 */
     margin: 20px;
-    display: none;
+    display: none; /* 默认隐藏，显示时用 .hidden 类 */
     font-weight: bold;
 }
 
@@ -62,7 +56,7 @@ button:hover {
     margin-top: 20px;
 }
 
-/* 卡片内容 */
+/* 卡片内容（包括图片） */
 .card {
     margin-top: 20px;
     opacity: 0;
@@ -70,7 +64,7 @@ button:hover {
     display: block;
 }
 
-/* 图片样式 */
+/* 图片的样式 */
 .card img {
     max-width: 100%;
     height: auto;
@@ -88,7 +82,7 @@ button:hover {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-    display: none;
+    display: none; /* 默认隐藏 */
     transition: background-color 0.3s ease;
 }
 
@@ -96,18 +90,18 @@ button:hover {
     background-color: #007B9E;
 }
 
-/* 隐藏元素 */
+/* 隐藏的元素样式 */
 .hidden {
     display: none;
 }
 
-/* 按钮居中 */
+/* 让按钮居中 */
 button, #downloadButton {
     margin-top: 20px;
     display: inline-block;
 }
 
-/* 响应式设计 */
+/* 适应屏幕小尺寸时的响应式调整 */
 @media screen and (max-width: 768px) {
     .container {
         padding: 10px;
