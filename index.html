@@ -18,9 +18,11 @@
             <h2>您的圣诞贺卡</h2>
             <!-- 图片将在这里显示 -->
             <img id="cardImage" src="" alt="圣诞贺卡图片" style="max-width: 100%; height: auto;">
+            <!-- 添加下载按钮 -->
+            <button id="downloadButton" class="hidden" onclick="downloadImage()">下载贺卡</button>
         </div>
     </div>
-    
+
     <script>
         // 密码与图片的映射关系
         const passwords = {
@@ -42,6 +44,7 @@
             const passwordInput = document.getElementById('password').value.trim();  // 获取输入的密码
             const imageContainer = document.getElementById('imageContainer');   // 获取图片展示区域
             const cardImage = document.getElementById('cardImage'); // 获取图片元素
+            const downloadButton = document.getElementById('downloadButton'); // 获取下载按钮
 
             // 验证密码
             if (passwords[passwordInput]) {
@@ -50,10 +53,27 @@
                 // 设置图片路径
                 const imagePath = `images/${passwords[passwordInput]}`;
                 cardImage.src = imagePath;
+
+                // 显示下载按钮
+                downloadButton.classList.remove('hidden');
             } else {
                 // 密码错误提示
                 alert("密码错误，请重新输入！");
             }
+        }
+
+        // 下载图片函数
+        function downloadImage() {
+            const cardImage = document.getElementById('cardImage');
+            const imageUrl = cardImage.src;
+
+            // 创建一个临时的链接来下载图片
+            const link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = imageUrl.substring(imageUrl.lastIndexOf('/') + 1); // 提取文件名
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
