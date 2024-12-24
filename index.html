@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞电子贺卡</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>圣诞电子贺卡</h1>
+        <p>请输入您的密码以查看贺卡：</p>
+        <input type="text" id="password" placeholder="请输入姓名对应的密码">
+        <button onclick="unlockCard()">解锁贺卡</button>
+        
+        <div id="card" class="card hidden">
+            <h2>您的圣诞贺卡</h2>
+            <img id="cardImage" src="" alt="圣诞贺卡图片">
+        </div>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
